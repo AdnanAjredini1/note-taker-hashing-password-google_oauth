@@ -7,6 +7,16 @@
         display: flex;
         flex-direction: column;
       }
+
+      .card-style {
+       max-width: 18rem;
+      max-height: 100px;
+      }
+
+      .plusi {
+        max-width: 70px;
+        max-height: 70px;
+      }
     }
   </style>
 
@@ -28,24 +38,30 @@
       padding-bottom: 70px;
     ">
       <a href="/new"
-        class="bg-slate-500 btn rounded-circle d-flex justify-content-center align-items-center shadow hover-zoom hover-overlay plusButton"
+        class="bg-slate-500 btn rounded-circle d-flex justify-content-center align-items-center shadow hover-zoom hover-overlay plusButton plusi"
         style="
         background: #4fd0c7;
         color: white;
         width: 70px;
         height: 70px;
         font-size: 3rem;
-      "><i class="bi bi-plus"></i></a>
+      "
+        onmouseover="this.style.backgroundColor='#15ada3'" onmouseout="this.style.backgroundColor='#4fd0c7'"
+      ><i class="bi bi-plus "></i></a>
     </div>
+
+   
+
+
 
     <div style="display: flex; flex-direction: row; gap: 60px; flex-wrap: wrap">
       <% for (let note of notes) { %>
 
-          <div class="card border-success mb-3 shadow" style="max-width: 18rem; gap: 10px">
+          <div class="card border-success mb-3 shadow card-style" style="width: 18rem; gap: 10px;margin-bottom: 10px;">
             <div class="card-header">
               <%= note.title %>
             </div>
-            <div class="card-body text-success">
+            <div class="card-body text-success" style="height: 100px; overflow: hidden;">
               <p class="card-text">
                 <%= note.content.substring(0, 40) %> ...
                   <a href="/notes/<%=note.id%>" class="card-link">view more</a>

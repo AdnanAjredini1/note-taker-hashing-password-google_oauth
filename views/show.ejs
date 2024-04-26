@@ -12,8 +12,10 @@
             <a
               href="/edit/<%= note.id %>"
               class="btn"
-              style="background: #4fd0c7; color: white"
-              >Edit</a
+              style="background: transparent; color:black;"
+              onmouseover="this.style.color='#a8b0bd'"
+              onmouseout="this.style.color='black'"
+              ><i class="bi bi-pencil-fill"></i></a
             >
             <form
               method="POST"
@@ -21,7 +23,7 @@
               style="display: inline"
             >
               <input type="hidden" name="_method" value="DELETE" />
-              <button type="submit" class="btn btn-danger">
+              <button style="background-color: transparent; color:red" type="submit" class="btn">
                 <i class="bi bi-trash3"></i>
               </button>
             </form>
@@ -29,7 +31,7 @@
         </div>
       </div>
 
-      <a href="/" class="icon-link icon-link-hover mt-2">
+      <a href="/note" class="icon-link icon-link-hover mt-2">
         Back to All Notes
         <i class="bi bi-arrow-right"></i>
       </a>
