@@ -12,7 +12,7 @@ import GoogleStrategy from "passport-google-oauth2";
 env.config();
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4000 || 4040 || 3003 || 5000;
 const saltRounds = parseInt(process.env.SALT_ROUNDS);
 
 app.use(
