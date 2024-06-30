@@ -227,7 +227,7 @@ passport.use(
           }
         );
       } else {
-        return cb("User not found");
+        return cb(null, false, { message: "User not found" });
       }
     } catch (err) {
       return cb(err);
